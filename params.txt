@@ -1,0 +1,55 @@
+(base)
+cd /Applications/neuroglancer/
+python cors_webserver.py -d /Applications/Ampps/www/brainwhiz/images/
+http://neuroglancer-demo.appspot.com
+nifti://http://127.0.0.1:9000/B51315_T1_masked.nii.gz
+
+
+  "dimensions": {
+    "x": [
+      0.001,
+      "m"
+    ],
+    "y": [
+      0.001,
+      "m"
+    ],
+    "z": [
+      0.001,
+      "m"
+    ]
+  },
+  "position": [
+    0.5676079392433167,
+    -1.7706316709518433,
+    0.787169873714447
+  ],
+  "crossSectionScale": 0.04969928723282541,
+  "projectionScale": 32,
+  "layers": [
+    {
+      "type": "image",
+      "source": "nifti://http://127.0.0.1:9000/B51315_T1_masked.nii.gz",
+      "tab": "source",
+      "name": "B51315_T1_masked.nii.gz"
+    }
+  ],
+  "selectedLayer": {
+    "layer": "B51315_T1_masked.nii.gz",
+    "visible": true
+  },
+  "layout": "4panel",
+  "partialViewport": [
+    0,
+    0,
+    1,
+    1
+  ]
+}
+
+
+#rendering
+#uicontrol invlerp normalized
+void main() {
+  emitGrayscale(normalized());
+}

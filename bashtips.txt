@@ -1,0 +1,3 @@
+python /Applications/Ampps/www/brainwhiz/upload/centerslice.py '/Applications/Ampps/www/brainwhiz/images/B51315_invivoAPOE1_labels_RAS.nii.gz' 'something.png' somepthing.png som.png
+
+cd /Applications/Ampps/www/brainwhiz/gallery/
