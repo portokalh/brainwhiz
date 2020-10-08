@@ -19,4 +19,3 @@ webbrowser.open_new(viewer.get_viewer_url())
 print(neuroglancer.to_url(viewer.state))
 print(viewer.state)
 print(viewer)
-"""

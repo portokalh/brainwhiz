@@ -18,9 +18,6 @@
         // We take the one and only row
         $row = mysqli_fetch_assoc($result);
         shell_exec("/Users/alex/anaconda3/bin/python /Users/alex/anaconda3/lib/python3.7/site-packages/neuroglancer/server.py")
-        shell_exec("/Users/alex/anaconda3/bin/python ng_viewnii.py $row['nifti_path']", $viewer);
-);
-
     ?>
     <div>
         <?php
@@ -38,10 +35,19 @@
     <div>
         <h4> Neuroglancer view: </h4>
         <?php
-            echo "<div> <a href=".$row['nifti_path']."> Nifti View </a> </div>";
-            // if(isset($row['label_path'])){
-            //     echo "<div> <a href=".$row['label_path']."> Label Download </a> </div> ";
-            // }
+            #echo "<div> <a href=".$row['nifti_path']."> Nifti View </a> </div>";
+            #shell_exec("/Users/alex/anaconda3/bin/python /Users/alex/anaconda3/lib/python3.7/site-packages/neuroglancer/server.py")
+            //ob_start()
+            $viewer = shell_exec("/Users/alex/anaconda3/bin/python ng_viewnii.py ".$row['nifti_path']);
+            //if is_null($viewer)
+            //{
+            //    echo ob_get_contents()
+            //}
+            //else
+            //{
+            echo "<div> <a href=".$viewer."> Nifti Viewer </a> </div>";
+            //}
+            //ob_end_clean();
         ?>
     </div>
     <div>
